@@ -102,7 +102,7 @@ export default {
     return results;
   },
   byString(o, s) {
-    if (!o) {
+    if (!o || !s) {
       return;
     }
     s = s.replace(/\[(\w+)\]/g, '.$1'); // convert indexes to properties
