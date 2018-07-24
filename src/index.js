@@ -213,9 +213,9 @@ class Formsy extends React.Component {
   attachToForm = (component) => {
     if (this.inputs.indexOf(component) === -1) {
       this.inputs.push(component);
-      // set initial value for the component
-      component.state.value = utils.byString(this.props.initialValues) || component.state.defalutValue;
       this.pristineValues[component.props.name] = component.props.value;
+      // set initial value for the component
+      component.state.value = utils.byString(this.props.initialValues, component.props.name) || component.state.defalutValue;
     }
 
     this.validate(component);
